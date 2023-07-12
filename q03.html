@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <script>
+            class Dog{
+                constructor(Breed,Age,Color){
+                    this.Breed=Breed;
+                    this.Age=Age;
+                    this.Color=Color;
+                }
+                eat(){
+                    return(`${this.Breed} is eating`)
+                }
+                sleep(){
+                    return(`${this.Breed} is sleeping`) 
+                }
+                sit(){
+                    return(`${this.Breed} is sitting`)
+                }
+
+                run(){
+                    return(`${this.Breed} is running`)
+                }
+            }
+
+            const Dog1=new Dog('Pug','3 years','Black');
+            const Dog2=new Dog('Boxer','2 years','White');
+            const Dog3=new Dog('Poodle','1 years','Brown');
+            console.log(Dog1.Breed);
+            console.log(Dog1.eat());
+            console.log(Dog2.Age);
+            console.log(Dog2.sleep());
+            console.log(Dog3.Color);
+            console.log(Dog3.sit());
+        </script>
+    </body>
+</html>

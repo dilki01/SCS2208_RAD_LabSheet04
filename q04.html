@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <script>
+            class Employee{
+                constructor(ENo,name,address,phoneNo,nic,joined_date,
+                desgnation,salary ){
+                    this.ENo=ENo;
+                    this.name=name;
+                    this.address=address;
+                    this.phoneNo=phoneNo;
+                    this.nic=nic;
+                    this.joined_date=joined_date;
+                    this.desgnation=desgnation;
+                    this.salary=salary;
+
+                }
+                reportDuty(time){
+                    return(`Arrives at ${time}.`)
+                }
+                dutyOff(time){
+                    return(`Leaves at ${time}.`)
+                }
+                lunch(preference){
+                    return(`${preference}`)
+                }
+                requestLeave(date,noOfDays,reason){
+                    return (`${this.name} requested leave on ${date} for ${noOfDays} days  for ${reason}`)
+                }
+            }
+
+            class permanent extends Employee{
+                    constructor(ENo,name,address,phoneNo,nic,joined_date,
+                desgnation,salary){
+                    super(ENo,name,address,phoneNo,nic,joined_date,
+                desgnation,salary);
+                }
+            }
+
+            class contract extends Employee{
+                constructor(ENo,name,address,phoneNo,nic,joined_date,
+                desgnation,salary,duraion){
+                    super(ENo,name,address,phoneNo,nic,joined_date,
+                desgnation,salary);
+                    this.duraion=12;
+                }
+
+                dutyExtension(date,newPeriod){
+                    if(date-this.joined_date>90){
+                    this.duraion=this.duraion+3;}
+                }
+            }
+
+            class temp extends Employee{
+                constructor(ENo,name,address,phoneNo,nic,joined_date,
+                desgnation,salary,duraion){
+                    super(ENo,name,address,phoneNo,nic,joined_date,
+                desgnation,salary);
+                    this.duraion=6;
+                }
+                dutyExtension(date){
+                    if(date-this.joined_date>90){
+                    this.duraion=this.duraion+6;}
+                }
+            }
+
+            let emp1=new Employee(1,"Dave","Moraruwa","1234567890","200145388674","2021-02-03","Designer",25000);
+            let emp2=new temp(emp1.ENo,emp1.name,emp1.address,emp1.phoneNo,emp1.nic,emp1.joined_date,emp1.desgnation,emp1.salary);
+            
+            console.log(emp1.reportDuty("9am"));
+            console.log( emp1.lunch("fish"));
+            console.log(emp1.requestLeave("2021-03-30",2,"A wedding"));
+            console.log(emp2.dutyExtension("2021-07-04"));
+
+        </script>
+    </body>
+</html>

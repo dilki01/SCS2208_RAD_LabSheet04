@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <script>
+            class Rectangle{
+                constructor(width,height){
+                    this.width=width;
+                    this.height=height;
+                }
+                getwidth(){
+                    return(`width of the rectangle is ${this.width}.`)
+                    return this.width;
+                }
+                getArea(){
+                    return this.height*this.width;
+                }
+            }
+
+            const rec1=new Rectangle(10,5);
+            const rec2=new Rectangle(5,8);
+            console.log(rec1.getwidth());
+            console.log('Area of rec1 is '+ rec1.getArea());
+            console.log('Area of rec2 is '+ rec2.getArea());
+
+        </script>
+    </body>
+</html>
